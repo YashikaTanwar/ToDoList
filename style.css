@@ -1,9 +1,11 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
 }
 body{
-    background-image:linear-gradient(rgb(7, 7, 83), purple);
+    background-image:linear-gradient(135deg,rgb(7, 7, 83), purple);
     background-repeat:no-repeat;
     width: 100vw;
     height: 100vh;
@@ -11,9 +13,77 @@ body{
     justify-content: center;
     align-items: center;
 }
+.container{
+    position: relative;
+}
 .todo{
-    height: 500px;
+    /* height: 500px; */
     width:400px;
     background-color: white;
     border-radius: 20px;
+    padding: 20px;
+}
+.todo h2{
+    color: darkblue;
+    display: flex;
+}
+.todo h2 img{
+    height:30px;
+    width:30px;
+    margin-left: 10px;
+}
+input{
+    border:none;
+    outline: none;
+    background-color: lightgray;
+    border-radius:20px;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    margin-top: 20px;
+    color: gray;
+}
+button{
+    position: absolute;
+    left: 279px;
+    background-color: orangered;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    outline: none;margin-top: 20px;
+    width: 100px;
+    height: 45px;
+    cursor: pointer;
+}
+.row{
+    margin-bottom:20px ;
+}
+ul li{
+    list-style: none;
+    margin: 5px 0px;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    user-select: none; /* this means we will not be able to select the text*/
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left:8px;
+    background-image: url(assets/unchecked.png);
+}
+ul li.checked{
+    text-decoration: line-through;
+    color: orange;
+}
+ul li.checked::before{
+    background-image: url(assets/checked.png);
 }
